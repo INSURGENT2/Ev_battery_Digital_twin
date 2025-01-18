@@ -1,0 +1,254 @@
+/***********************************
+  Overall Dashboard Container
+************************************/
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Barlow', sans-serif;
+  background-color: #f8f9fc; /* Light background like Volt */
+}
+
+/***********************************
+  Main Content Area
+************************************/
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px; /* Match your Sidebar width below (210px) */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8f9fc; 
+}
+
+/***********************************
+  Header / Search Bar
+************************************/
+.dashboard-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* White header card */
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef; /* Subtle border */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar {
+  width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/***********************************
+  The 2x2 Grid (Main Layout)
+************************************/
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* left area bigger than right */
+  grid-template-rows: 500px 500px; 
+  gap: 20px;
+}
+
+/***********************************
+  TOP LEFT: 3D Model Container
+************************************/
+.model-container {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.model-container h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #3b434c; /* Dark gray text */
+}
+
+.model-area {
+  flex: 1;
+  background-color: #e9f7fe; /* Light teal reminiscent of Volt’s chart backgrounds */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1da1f2; /* Accent blue */
+  font-size: 16px;
+}
+
+/* Hide the big "Overview" heading */
+.overview-container h4 {
+  display: none;
+}
+
+/* Turn the entire .overview-container into a grid so items form squares */
+.overview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 20px; /* add some padding around the grid */
+  background-color: #ffffff; 
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Each .overview-item becomes a small square-like card */
+.overview-item {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;  /* helps shape the square */
+  /* If you need it truly square, fix width too:
+     width: 140px; 
+     but then you might want to adjust grid columns accordingly. 
+  */
+}
+
+/* For the icon inside each card (assuming you add <i> or <FontAwesomeIcon> in the item) */
+.overview-item i, 
+.overview-item svg,
+.overview-item .icon {
+  font-size: 24px; /* bigger icon */
+  margin-bottom: 8px;
+  color: #3b434c;  /* dark icon color */
+}
+
+/* The label (span) below the icon */
+.overview-item span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b434c;
+  margin-bottom: 4px;
+}
+
+/* The numeric or text value (<strong>) at the bottom */
+.overview-item strong {
+  font-size: 16px;
+  color: #1da1f2; /* accent color */
+  font-weight: 700;
+}
+
+
+/***********************************
+  BOTTOM LEFT: Charts Container (3 columns)
+************************************/
+.charts-container {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.chart-box {
+  background-color: #ffffff;
+  border: 1px solid #edf2f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.chart-box h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #3b434c;
+  font-weight: 600;
+}
+
+/***********************************
+  BOTTOM RIGHT: Logs Container
+************************************/
+.logs-container {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logs-container h4 {
+  color: #3b434c;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logs-container ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 16px;
+  color: #5f6c7b;
+  font-size: 22px;
+}
+
+/***********************************
+  Risk States
+************************************/
+.high-risk {
+  color: #e53e3e; /* Red for high risk */
+}
+.low-risk {
+  color: #48bb78; /* Green for low risk */
+}
+
+/***********************************
+  Popup (High Risk Alert)
+************************************/
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease, fadeOut 0.3s ease 4.7s;
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
